@@ -10,6 +10,8 @@ function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const base = import.meta.env.BASE_URL;
+
   return (
     <section
       style={{
@@ -18,7 +20,7 @@ function Home() {
         alignItems: "center",
         justifyContent: "space-between",
         textAlign: "left",
-        backgroundImage: "url('/images/hero-bg.jpg')",
+        backgroundImage: `url('${base}images/hero-bg.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: `center ${offset * 0.4}px`, // Moves background slower
         backgroundAttachment: "fixed",
@@ -45,7 +47,7 @@ function Home() {
       {/* Left Image */}
       <div style={{ flex: "1", zIndex: 2, display: "flex", justifyContent: "center" }}>
         <img
-          src="/images/about.jpg"
+          src={`${base}images/about.jpg`}
           alt="Ginni in Studio"
           style={{
             width: "80%",
