@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #fafafa;
+  color: #222;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a {
+  color: #5a3dff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #222;
+}
+
+html {
+  scroll-padding-top: 70px; /* Height of navbar + small margin */
+  scroll-behavior: smooth;
+}
