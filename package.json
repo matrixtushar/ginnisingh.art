@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postbuild": "cp dist/index.html dist/404.html",
-    "deploy": "npm run build && gh-pages -d dist"
+    "postbuild": "copy dist\\index.html dist\\404.html",
+    "deploy": "npm run build && npm run postbuild && gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.1.0",
