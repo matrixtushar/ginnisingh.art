@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { FaGraduationCap, FaAward, FaPaintBrush } from "react-icons/fa";
 
 function CV() {
+  const base = import.meta.env.BASE_URL;
   const [cvData, setCvData] = useState(null);
 
   useEffect(() => {
-    fetch("/cvData.json") // Make sure cvData.json is inside `public`
+    fetch(`${base}cvData.json`) // Make sure cvData.json is inside `public`
       .then((res) => res.json())
       .then((data) => setCvData(data))
       .catch((err) => console.error("Failed to load CV data:", err));
@@ -92,7 +93,7 @@ function CV() {
       {/* Download Button */}
       <div style={{ textAlign: "center", marginTop: "40px" }}>
         <a
-          href="/GinniSingh_CV.pdf"
+          href={`${base}GinniSingh_CV.pdf`}
           download
           style={{
             background: "#d97706",
