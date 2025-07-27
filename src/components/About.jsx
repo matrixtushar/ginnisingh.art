@@ -43,7 +43,7 @@ function About() {
       >
         {/* Artist Image */}
         <img
-          src="/images/about.jpg"
+          src={`${base}images/about.jpg`}
           alt="Ginni Singh"
           style={{
             width: "280px",
