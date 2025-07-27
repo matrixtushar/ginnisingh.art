@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function About() {
+  const base = import.meta.env.BASE_URL;
   const [readMore, setReadMore] = useState(false);
 
   const shortText = `
