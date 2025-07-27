@@ -1,7 +1,8 @@
 function ArtistStatement() {
+   const base = import.meta.env.BASE_URL;
   const containerStyle = {
     padding: "120px 20px",
-    backgroundImage: "url('/images/watercolor-texture.png')",
+    backgroundImage: `url('${base}images/watercolor-texture.png')`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     minHeight: "80vh",
