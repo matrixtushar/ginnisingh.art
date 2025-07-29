@@ -67,7 +67,7 @@ function Home() {
       {/* Right Content */}
       <div style={{ flex: "1", zIndex: 2, paddingLeft: "40px" }}>
         <p data-aos="fade-up" data-aos-delay="200" style={{ fontSize: "1.3rem", marginBottom: "30px", fontFamily: "'Playfair Display', serif" }}>
-          "Between aches and joy, I paint what the heart remembers and the mind forgets. My work is a quiet call towards feeling, healing and becomind whole."
+          "Between aches and joy, I paint what the heart remembers and the mind forgets. My work is a quiet call towards feeling, healing and becoming whole."
         </p>
         <Link
           to="/gallery"
