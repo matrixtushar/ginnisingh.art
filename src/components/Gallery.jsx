@@ -45,7 +45,6 @@ function Gallery() {
   const cardStyle = {
     position: "relative",
     width: "100%",
-    borderRadius: "10px",
     overflow: "hidden",
     boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
     cursor: "pointer",
@@ -53,7 +52,6 @@ function Gallery() {
 
   const imageStyle = {
     width: "100%",
-    borderRadius: "10px",
     transition: "transform 0.3s ease",
     display: "block",
   };
