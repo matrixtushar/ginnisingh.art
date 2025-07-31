@@ -49,7 +49,7 @@ function Gallery() {
             key={index}
             src={`${base}images/${painting.src}`}
             alt={painting.title}
-            style={{ width: "100%", borderRadius: "8px", cursor: "pointer" }}
+            style={{ width: "100%", cursor: "pointer" }}
             onClick={() => setSelected(painting)}
           />
         ))}
@@ -76,7 +76,6 @@ function Gallery() {
             onClick={(e) => e.stopPropagation()}
             style={{
               backgroundColor: "#fff",
-              borderRadius: "8px",
               maxWidth: "90vw",
               maxHeight: "90vh",
               overflowY: "auto",
@@ -87,12 +86,12 @@ function Gallery() {
             <img
               src={`${base}images/${selected.src}`}
               alt={selected.title}
-              style={{ maxWidth: "100%", maxHeight: "60vh", borderRadius: "8px" }}
+              style={{ maxWidth: "100%", maxHeight: "60vh"}}
             />
             <h3 style={{ marginTop: "20px", fontSize: "1.2rem" }}>{selected.title}</h3>
-            <p style={{ margin: "5px 0" }}>{selected.size}</p>
-            <p style={{ margin: "5px 0" }}>{selected.medium}</p>
-            <p style={{ margin: "5px 0" }}>{selected.year}</p>
+            <p style={{ margin: "5px 0", fontSize: "0.9rem", color: "#555" }}>
+              {selected.size} | {selected.medium} | {selected.year}
+              </p>
             <button
               onClick={() => setSelected(null)}
               style={{
@@ -101,7 +100,6 @@ function Gallery() {
                 border: "none",
                 backgroundColor: "#000",
                 color: "#fff",
-                borderRadius: "5px",
                 cursor: "pointer",
               }}
             >
