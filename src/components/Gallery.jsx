@@ -91,7 +91,6 @@ function Gallery() {
   const previewImageStyle = {
     maxWidth: "90%",
     maxHeight: "90%",
-    borderRadius: "10px",
     boxShadow: "0 0 20px rgba(0,0,0,0.5)",
     animation: "zoomIn 0.3s ease",
   };
