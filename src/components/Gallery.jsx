@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function Gallery() {
   const base = import.meta.env.BASE_URL;
+
   const paintings = [
     { src: "painting1.jpg", title: "A Call To", size: "5 x 4 feet", medium: "Acrylic and Pen on Canvas", year: "2025" },
     { src: "painting2.jpg", title: "Twilight - I", size: "18 x 18 inches", medium: "Acrylic and Pen on Canvas", year: "2024" },
@@ -30,17 +31,17 @@ function Gallery() {
   ];
 
   const [selected, setSelected] = useState(null);
-
   const sortedPaintings = [...paintings].sort((a, b) => b.year - a.year);
 
   return (
     <section id="gallery" style={{ padding: "40px", textAlign: "center" }}>
       <h2 style={{ marginBottom: "30px" }}>Gallery</h2>
+
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "20px"
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gap: "20px",
         }}
       >
         {sortedPaintings.map((painting, index) => (
@@ -80,18 +81,18 @@ function Gallery() {
               maxHeight: "90vh",
               overflowY: "auto",
               padding: "20px",
-              textAlign: "center"
+              textAlign: "center",
             }}
           >
             <img
               src={`${base}images/${selected.src}`}
               alt={selected.title}
-              style={{ maxWidth: "100%", maxHeight: "70vh", borderRadius: "8px" }}
+              style={{ maxWidth: "100%", maxHeight: "60vh", borderRadius: "8px" }}
             />
-            <h3 style={{ marginTop: "20px" }}>{selected.title}</h3>
-            <p>{selected.size}</p>
-            <p>{selected.medium}</p>
-            <p>{selected.year}</p>
+            <h3 style={{ marginTop: "20px", fontSize: "1.2rem" }}>{selected.title}</h3>
+            <p style={{ margin: "5px 0" }}>{selected.size}</p>
+            <p style={{ margin: "5px 0" }}>{selected.medium}</p>
+            <p style={{ margin: "5px 0" }}>{selected.year}</p>
             <button
               onClick={() => setSelected(null)}
               style={{
@@ -101,7 +102,7 @@ function Gallery() {
                 backgroundColor: "#000",
                 color: "#fff",
                 borderRadius: "5px",
-                cursor: "pointer"
+                cursor: "pointer",
               }}
             >
               Close
