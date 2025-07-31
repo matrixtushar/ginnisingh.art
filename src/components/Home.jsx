@@ -3,11 +3,19 @@ import { useEffect, useState } from "react";
 
 function Home() {
   const [offset, setOffset] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     const handleScroll = () => setOffset(window.scrollY);
+
+    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const base = import.meta.env.BASE_URL;
@@ -17,16 +25,17 @@ function Home() {
       style={{
         height: "100vh",
         display: "flex",
+        flexDirection: isMobile ? "column" : "row",
         alignItems: "center",
         justifyContent: "space-between",
         textAlign: "left",
         backgroundImage: `url('${base}images/hero-bg.jpg')`,
         backgroundSize: "cover",
-        backgroundPosition: `center ${offset * 0.4}px`, // Moves background slower
+        backgroundPosition: `center ${offset * 0.4}px`,
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
         color: "#fff",
-        padding: "0 50px",
+        padding: isMobile ? "20px" : "0 50px",
         position: "relative",
         transition: "background-position 0.2s ease-out",
       }}
@@ -45,14 +54,23 @@ function Home() {
       />
 
       {/* Left Image */}
-      <div style={{ flex: "1", zIndex: 2, display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          flex: isMobile ? "unset" : "1",
+          width: isMobile ? "100%" : "auto",
+          zIndex: 2,
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: isMobile ? "30px" : "0",
+        }}
+      >
         <img
           src={`${base}images/about.jpg`}
           alt="Ginni in Studio"
           style={{
-            width: "80%",
+            width: isMobile ? "100%" : "80%",
             height: "auto",
-            maxHeight: "500px",
+            maxHeight: isMobile ? "none" : "500px",
             borderRadius: "10px",
             objectFit: "cover",
             boxShadow: "0 4px 10px rgba(0,0,0,0.5)",
@@ -65,8 +83,23 @@ function Home() {
       </div>
 
       {/* Right Content */}
-      <div style={{ flex: "1", zIndex: 2, paddingLeft: "40px" }}>
-        <p data-aos="fade-up" data-aos-delay="200" style={{ fontSize: "1.3rem", marginBottom: "30px", fontFamily: "'Playfair Display', serif" }}>
+      <div
+        style={{
+          flex: isMobile ? "unset" : "1",
+          zIndex: 2,
+          paddingLeft: isMobile ? "0" : "40px",
+          textAlign: isMobile ? "center" : "left",
+        }}
+      >
+        <p
+          data-aos="fade-up"
+          data-aos-delay="200"
+          style={{
+            fontSize: "1.2rem",
+            marginBottom: "30px",
+            fontFamily: "'Playfair Display', serif",
+          }}
+        >
           "Between aches and joy, I paint what the heart remembers and the mind forgets. My work is a quiet call towards feeling, healing and becoming whole."
         </p>
         <Link
