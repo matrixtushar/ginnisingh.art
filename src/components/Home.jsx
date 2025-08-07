@@ -108,26 +108,27 @@ function Home() {
         >
           "Between aches and joy, I paint what the heart remembers and the mind forgets. My work is a quiet call towards feeling, healing and becoming whole."
         </p>
-        <Link
-          to="/gallery"
-          style={{
-            display: "inline-block",
-            padding: "12px 30px",
-            fontSize: "18px",
-            color: "#fff",
-            backgroundColor: "#ff6f61",
-            textDecoration: "none",
-            borderRadius: "5px",
-            transition: "background 0.3s",
-            width: "auto",
-            textAlign: "center",
-            maxWidth: "80vw",
-          }}
-          onMouseEnter={(e) => (e.target.style.backgroundColor = "#e65b50")}
-          onMouseLeave={(e) => (e.target.style.backgroundColor = "#ff6f61")}
-        >
-          View Gallery
-        </Link>
+<div style={{ textAlign: isMobile ? "center" : "left" }}>
+  <Link
+    to="/gallery"
+    style={{
+      display: "inline-block",
+      padding: "8px 20px",              // 🔽 Reduced padding
+      fontSize: "16px",                 // 🔽 Smaller font size
+      color: "#fff",
+      backgroundColor: "#ff6f61",
+      textDecoration: "none",
+      borderRadius: "5px",
+      transition: "background 0.3s",
+      width: "fit-content",             // ✅ Auto-shrinks to text size
+      textAlign: "center",
+    }}
+    onMouseEnter={(e) => (e.target.style.backgroundColor = "#e65b50")}
+    onMouseLeave={(e) => (e.target.style.backgroundColor = "#ff6f61")}
+  >
+    View Gallery
+  </Link>
+</div>
       </div>
     </section>
   );
