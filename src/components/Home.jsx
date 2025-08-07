@@ -61,6 +61,8 @@ function Home() {
           zIndex: 2,
           display: "flex",
           justifyContent: "center",
+          maxHeight: isMobile ? "40vh" : "none",
+          overflow: "hidden",
           marginBottom: isMobile ? "30px" : "0",
         }}
       >
@@ -70,7 +72,7 @@ function Home() {
           style={{
             width: isMobile ? "100%" : "80%",
             height: "auto",
-            maxHeight: isMobile ? "none" : "500px",
+            maxHeight: isMobile ? "100%" : "500px",
             borderRadius: "10px",
             objectFit: "cover",
             boxShadow: "0 4px 10px rgba(0,0,0,0.5)",
@@ -89,6 +91,10 @@ function Home() {
           zIndex: 2,
           paddingLeft: isMobile ? "0" : "40px",
           textAlign: isMobile ? "center" : "left",
+          minHeight: isMobile ? "50vh" : "auto",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
         }}
       >
         <p
