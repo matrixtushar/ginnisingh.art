@@ -119,6 +119,9 @@ function Home() {
             textDecoration: "none",
             borderRadius: "5px",
             transition: "background 0.3s",
+            width: "auto",
+            textAlign: "center",
+            maxWidth: "80vw",
           }}
           onMouseEnter={(e) => (e.target.style.backgroundColor = "#e65b50")}
           onMouseLeave={(e) => (e.target.style.backgroundColor = "#ff6f61")}
